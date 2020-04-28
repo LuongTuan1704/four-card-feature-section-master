@@ -1,45 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
   <title>Frontend Mentor | Four card feature section</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    :root {
+      --red: hsl(0, 78%, 62%);
+      --cyan: hsl(180, 62%, 55%);
+      --orange: hsl(34, 97%, 64%);
+      --blue: hsl(212, 86%, 64%);
+
+      --Very-Dark-Blue: hsl(234, 12%, 34%);
+      --Grayish-Blue: hsl(229, 6%, 66%);
+      --Very-Light-Gray: hsl(0, 0%, 98%);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-size: 15px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .four-card-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 0 50px 0;
+    }
+
+    .card {
+      max-width: 400px;
+      padding: 0 15px;
+    }
+
+    .four-card-heading {
+      margin: 50px auto;
+      max-width: 550px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .four-card-heading h1 {
+      font-weight: 200;
+      color: var(--Grayish-Blue);
+    }
+
+    .four-card-heading h2 {
+      font-weight: 600;
+    }
+
+    .four-card-heading p {
+      color: var(--Grayish-Blue);
+      font-weight: 400;
+    }
+
+    .two-card .card:first-child {
+      margin-bottom: 30px;
+    }
+
+    .card-body {
+      padding: 20px 30px;
+      box-shadow: 0px 7px 15px hsla(234, 12%, 34%, 0.3);
+      border-radius: 7px;
+      background-color: var(--Very-Light-Gray);
+
+    }
+
+    .card-body h2 {
+      color: var(--Very-Dark-Blue);
+      font-weight: 600;
+    }
+
+    .card-body p {
+      color: var(--Grayish-Blue);
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+
+    .card-body.a {
+      border-top: 5px solid var(--cyan);
+    }
+
+    .card-body.b {
+      border-top: 5px solid var(--red);
+    }
+
+    .card-body.c {
+      border-top: 5px solid var(--orange);
+    }
+
+    .card-body.d {
+      border-top: 5px solid var(--blue);
+    }
+
+    .card_img {
+      text-align: right;
+    }
+
+    @media (max-width:375px) {
+      .four-card-body {
+        flex-direction: column;
+      }
+
+      .card {
+        margin-bottom: 30px;
+        padding: 0 30px;
+      }
+    }
+
+    .attribution {
+      font-size: 15px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .attribution a {
+      color: hsl(29, 78%, 40%);
+    }
   </style>
 </head>
+
 <body>
-  
-  Reliable, efficient delivery
-  Powered by Technology
+  <section id="four-card" class="container">
+    <div class="four-card-heading">
+      <h1> Reliable, efficient delivery</h1>
+      <h2>Powered by Technology</h2>
+      <p>
+        Our Artificial Intelligence powered tools use millions of project data points
+        to ensure that your project is successful
+      </p>
+    </div>
+    <div class="four-card-body">
+      <div class="card">
+        <div class="card-body a">
+          <h2>Supervisor</h2>
+          <p>Monitors activity to identify project roadblocks</p>
+          <div class="card_img">
+            <img src="images/icon-supervisor.svg" alt="">
+          </div>
+        </div>
 
-  Our Artificial Intelligence powered tools use millions of project data points 
-  to ensure that your project is successful
+      </div>
+      <div class="two-card">
+        <div class="card">
+          <div class="card-body b">
+            <h2>Team Builder</h2>
+            <p>Scans our talent network to create the optimal team for your project</p>
+            <div class="card_img">
+              <img src="images/icon-team-builder.svg" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body c">
+            <h2>Karma</h2>
+            <p>Regularly evaluates our talent to ensure quality</p>
+            <div class="card_img">
+              <img src="images/icon-karma.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body d">
+          <h2> Calculator</h2>
+          <p>Uses data from past projects to provide better delivery estimates</p>
+          <div class="card_img">
+            <img src="images/icon-calculator.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  Supervisor
-  Monitors activity to identify project roadblocks
-
-  Team Builder
-  Scans our talent network to create the optimal team for your project
-
-  Karma
-  Regularly evaluates our talent to ensure quality
-
-  Calculator
-  Uses data from past projects to provide better delivery estimates
-
-  
   <footer>
     <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Lương Tuấn</a>.
     </p>
   </footer>
 </body>
+
 </html>
